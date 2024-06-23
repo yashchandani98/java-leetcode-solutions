@@ -1,4 +1,4 @@
-package HashMap;
+package MaxHeap;
 
 import java.util.*;
 

@@ -6,7 +6,7 @@ import java.util.*;
  The intuition behind this approach is to use fixed sliding window of size k. In each iteration of shifting window towards right, we have to add the largest element in that window in result array.
  We can use two approach here:
  - Approach 1 PriorityQueue: This will give us time complexity of O(nlogn) because in each iteration, we will add and remove element and this will cost  O(logn). and getting top element(maxHeap or max element) will take O(1).
- - Approach 2 Monotonic Deque : This will give us tc of O(n). reason being for every n operation we will use deque to remove and add element and since it's double ended queue it will take O(1) to add and remove element and always the queue will be using property of monotopic (Decreasing order from head to tail) (Preferred DS)
+ - Approach 2 Monotonic Deque: This will give us tc of O(n). reason being for every n operation we will use deque to remove and add element and since it's double ended queue it will take O(1) to add and remove element and always the queue will be using property of monotopic (Decreasing order from head to tail or (queue front to back)) (Preferred DS). And the result will be always be in the front of deque.
  */
 public class Leetcode239SlidingWindowMaximum {
 

@@ -11,15 +11,13 @@ public class Leetcode53MaxSubArray {
             return nums[0];
         }
         int maxSum = Integer.MIN_VALUE;
-        int left_ptr=0, right_ptr = 0;
         int currSum = 0;
-        for(;right_ptr<nums.length;right_ptr++){
-            currSum = currSum + nums[right_ptr];
+        for (int num : nums) {
+            currSum = currSum + num;
             maxSum = Math.max(maxSum, currSum);
-            if(currSum<0){
+            if (currSum < 0) {
                 //Reset phase
                 currSum = 0;
-                left_ptr = right_ptr+1;
             }
         }
         return maxSum;

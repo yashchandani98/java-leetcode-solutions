@@ -11,7 +11,7 @@ import java.util.*;
 * */
 public class Leetcode46Permutations {
     /**
-     TC: O(N!)
+     TC: O(N*N!)
      */
     public List<List<Integer>> permute(int[] nums) {
         Set<Integer> hashSet = new HashSet<Integer>();

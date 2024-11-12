@@ -14,6 +14,7 @@ public class Leetcode300LongestIncreasingSubsequence {
         for(int i=1;i<len;i++){
             int maxLen = 0;
             for(int j=i-1; j>=0;j--){
+                // Going backwards from current index i
                 if(nums[j]<nums[i]){
                     // Leverage the subproblem (will take max of the longest subsequence of every element which is stored in lis)
                     maxLen = Math.max(maxLen, lis[j]);

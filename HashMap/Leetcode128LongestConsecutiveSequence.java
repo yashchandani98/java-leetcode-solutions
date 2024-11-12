@@ -1,6 +1,7 @@
 package HashMap;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /*
 *
@@ -38,5 +39,23 @@ public class Leetcode128LongestConsecutiveSequence {
             }
         }
         return res;
+    }
+
+    public int longestConsecutiveHashSetApproach(int[] nums) {
+        Set<Integer> hashSet = Arrays.stream(nums).boxed().collect(Collectors.toSet());
+        int result = 0;
+        for(int num: nums){
+            if(!hashSet.contains(num-1)){
+                int count = 1;
+                int temp = num;
+                while(hashSet.contains(temp+1)){
+                    count++;
+                    temp++;
+                }
+                result = Math.max(result, count);
+            }
+        }
+
+        return result;
     }
 }

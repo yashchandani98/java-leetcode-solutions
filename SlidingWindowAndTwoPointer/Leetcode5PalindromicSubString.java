@@ -43,13 +43,14 @@ public class Leetcode5PalindromicSubString {
         }
         return true;
     }
-    public String longestPalindromeApproach2(String s) {
+    public String longestPalindrome(String s) {
         /**
-         *Expand from conters approach
+         Expand from centers approach
          */
 
         int[] indicesWithLen = {0,0,0};
         for(int i=0;i<s.length();i++){
+            // For handling odd length palindrome
             int left_ptr = i, right_ptr = i;
             while(left_ptr>=0 && right_ptr<s.length() && s.charAt(left_ptr) == s.charAt(right_ptr)){
                 int currlen = right_ptr-left_ptr+1;
@@ -59,6 +60,7 @@ public class Leetcode5PalindromicSubString {
                 left_ptr-=1;
                 right_ptr+=1;
             }
+            // For handling even length palindrome
             left_ptr = i;
             right_ptr = i+1;
             while(left_ptr>=0 && right_ptr<s.length() && s.charAt(left_ptr) == s.charAt(right_ptr)){

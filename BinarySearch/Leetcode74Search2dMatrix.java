@@ -13,6 +13,7 @@ package BinarySearch;
 2nd approach is to use binary search twice on matrix:
 - 1st to get the row number.
 - 2nd to get the column number using that row number.
+* TC: O(logm + logn)
 *
 *
 * */

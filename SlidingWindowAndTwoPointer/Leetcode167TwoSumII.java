@@ -3,6 +3,11 @@ package SlidingWindowAndTwoPointer;
 import java.util.Arrays;
 
 public class Leetcode167TwoSumII {
+    /**
+     Use two pointer approach to solve this problem. Initialize left_ptr at 0 index, right_ptr at last index.
+     In case the sum of these two element situated at left_ptr and right_ptr is less than target, increment left_ptr else
+     decrement right_ptr. do it until left_ptr<right_ptr
+     */
     public static void main(String[] args){
         int[] arr = {2,7,11,15};
         int target = 9;

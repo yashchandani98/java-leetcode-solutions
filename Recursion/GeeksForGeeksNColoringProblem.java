@@ -50,32 +50,34 @@ public class GeeksForGeeksNColoringProblem {
 
         System.out.println(graphColoring(graph, 3, 4));
     }
-    public static boolean graphColoring(int graph[][], int m, int n) {
-        int[] verticesColoured = new int[n];
-        if(!solve(0, graph, m, verticesColoured)){
-            return false;
-        }
-        return true;
+    private static boolean graphColoring(int[][] graph, int colors, int n) {
+        int[] verticescolored = new int[n];
+
+        return solve(0, colors, graph, verticescolored);
+
     }
 
-    public static boolean canColor(int node, int[][] graph, int color, int[] verticesColoured){
-        for(int adjacentNode: graph[node]){
-            if (verticesColoured[adjacentNode] == color) return false;
-        }
-        return true;
-    }
 
-    public static boolean solve(int node, int[][] graph, int colors, int[] verticesColoured){
-        if(node >= verticesColoured.length){
+    private static boolean solve(int node, int colors, int[][] graph,int[] verticescolored) {
+        if(node>=verticescolored.length){
+
             return true;
         }
-        for(int i=0; i< colors;i++){
-            if(canColor(node, graph, i, verticesColoured)){
-                verticesColoured[node] = i;
-                if(solve(node+1, graph, colors, verticesColoured)) return true;
-                verticesColoured[node] = 0;
+
+        for(int i=1; i<=colors; i++) {
+            if(canColor(node, i, graph, verticescolored)){
+                verticescolored[node] = i;
+                if(solve(node+1, colors, graph, verticescolored)) return true;
+                verticescolored[node] = 0;
             }
         }
         return false;
+    }
+
+    private static boolean canColor(int node, int color, int[][] graph, int[] verticescolored){
+        for(int adj: graph[node]){
+            if(verticescolored[adj] == color) return false;
+        }
+        return true;
     }
 }

@@ -11,9 +11,8 @@ public class Leetcode118PascalsTraingle {
         List<List<Integer>> res = new ArrayList<>();
         for(int i=0; i<numRows; i++){
             List<Integer> ans = new ArrayList<>();
-            int j =i;
-            for(int k=0; k<=j; k++){
-                if(k==0 || k == j){
+            for(int k = 0; k<= i; k++){
+                if(k==0 || k == i){
                     ans.add(k, 1);
                 } else{
                     List<Integer> lastRow = res.get(i-1);

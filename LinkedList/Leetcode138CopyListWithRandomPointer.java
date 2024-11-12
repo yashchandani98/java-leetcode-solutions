@@ -19,13 +19,20 @@ class Node {
 }
 
 /*
-* Approach 1 : (using HashMap) Here we will do Node to Node mapping, for every old node, we will create new node in 1st iteration
+* Brute force Approach : (using HashMap) Here we will do Node to Node mapping, for every old node, we will create new node in 1st iteration
 * Then in second iteration, we will update next and random pointers using that hashMap. and we will return hashMap.get(head)That's it
+* TC: O(2n)(Twice iteration, first to create all the nodes, second to update next and random pointer using the same hashMap)
+* SC: O(n): HashMap
 *
-* Approach 2 : (Without HashMap or adding a copied node in between two nodes) In the first iteration: Here we will create duplicate node of the current node and
+* Optimal Approach  : (Without HashMap or adding a copied node in between two nodes) In the first iteration: Here we will create duplicate node of the current node and
 * insert in between two nodes (Between current and next node)
 * In the second iteration, we will traverse the linked list and will consider copied node as the next node of current node and will update it's
 * random pointer and in the next iteration, we will close all the copied node in the new pointer
+*
+* TC: O(3n)(Thrice iteration: First to create copied node(With value and it's next pointer) and insert it into between two nodes. Second to
+* update random pointer of the copied node to it's original node's random next(Since new node will be present in the next pointer). Third iteration to
+* update next pointer of all the copied node and in the last return newHead.next)
+* SC: O(1)
 *
 * */
 public class Leetcode138CopyListWithRandomPointer {

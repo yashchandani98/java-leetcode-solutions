@@ -17,7 +17,7 @@ public class Leetcode455AssignCookies {
             while(cookie_index<s.length && greed>s[cookie_index])
                 cookie_index++;
             if(cookie_index<s.length && greed<=s[cookie_index]){
-                // If the child greed factor has been fullfilled, reduce the cookie sixe to value =-1 stating that cookies has been fed to the child and increase the count
+                // If the child greed factor has been fullfilled, reduce the cookie size to value =-1 stating that cookies has been fed to the child and increase the count
                 count++;
                 s[cookie_index]= -1;
             } else{

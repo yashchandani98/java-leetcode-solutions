@@ -1,6 +1,11 @@
 package Recursion;
 
 public class Leetcode37SudokuSolver {
+    /*
+
+    * TC: O(9^N^2. N)
+        SC: Recursion Stack: O(N^2)
+    **/
     public void solveSudoku(char[][] board) {
         solve(board);
     }

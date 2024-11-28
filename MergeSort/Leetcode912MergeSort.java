@@ -7,6 +7,7 @@ public class Leetcode912MergeSort {
     }
 
     private int[] mergeSort(int[]nums, int left, int right){
+        // Base case
         if(right==left){
             int[] arr = {nums[right]};
             return arr;
